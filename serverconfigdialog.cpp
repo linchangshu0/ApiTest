@@ -19,6 +19,10 @@ QString ServerConfigDialog::GetServerName() {
     return ui->serverName->text();
 }
 
+QString ServerConfigDialog::GetServerDesc() {
+    return ui->serverDesc->text();
+}
+
 void ServerConfigDialog::on_ok_clicked()
 {
     if (ui->serverName->text().isEmpty()) {

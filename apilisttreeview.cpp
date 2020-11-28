@@ -104,7 +104,9 @@ void ApiListTreeView::OnAddServer() {
     if (nRet == QDialog::Accepted) {
         QString serverName = m_pServerConfigDialog->GetServerName();
         ApiItem *serverItem = new ApiItem(serverName);
+        ApiItem *serverDesc = new ApiItem(m_pServerConfigDialog->GetServerDesc());
         m_pModel->appendRow(serverItem);
+        m_pModel->setItem(serverItem->index().row(), 1, serverDesc);
         m_vecServerItems.push_back(serverItem);
     }
 }

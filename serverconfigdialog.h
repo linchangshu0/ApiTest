@@ -15,6 +15,7 @@ public:
     explicit ServerConfigDialog(QWidget *parent = nullptr);
     ~ServerConfigDialog();
     QString GetServerName();
+    QString GetServerDesc();
 
 private slots:
     void on_ok_clicked();
