@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "apilisttreeview.h"
+#include "treeview.h"
 
 #include <QMainWindow>
 
@@ -19,7 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    ApiListTreeView *m_pApiListTreeView;
+    ApiTreeView     *m_pApiListTreeView;
 };
 
 #endif // MAINWINDOW_H

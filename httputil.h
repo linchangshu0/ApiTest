@@ -20,7 +20,7 @@ public:
         return m_pInstance;
     }
 
-    bool GetRequestResult() {   return m_bRequestResult; }
+    bool GetRequestResult() {   return m_iRequestResult; }
     void DoGet(QString url, int requestType, int paramType);
 
 private slots:
@@ -31,7 +31,7 @@ private:
     HttpUtil();
     static HttpUtil *m_pInstance;
     QNetworkAccessManager   *m_pNetworkManager;
-    bool            m_bRequestResult;
+    int             m_iRequestResult;
     QEventLoop      m_eventLoop;
     QNetworkReply   *m_pNetworkReply;
 };

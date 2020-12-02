@@ -26,25 +26,24 @@ CONFIG += c++11
 
 SOURCES += \
         apiconfigdialog.cpp \
-        apiitem.cpp \
-        apiitemdelegate.cpp \
-        apilisttreeview.cpp \
-        apimodel.cpp \
+        common.cpp \
         httputil.cpp \
         main.cpp \
         mainwindow.cpp \
-        serverconfigdialog.cpp
+        serverconfigdialog.cpp \
+        treeitem.cpp \
+        treemodel.cpp \
+        treeview.cpp
 
 HEADERS += \
         apiconfigdialog.h \
-        apiitem.h \
-        apiitemdelegate.h \
-        apilisttreeview.h \
-        apimodel.h \
         common.h \
         httputil.h \
         mainwindow.h \
-        serverconfigdialog.h
+        serverconfigdialog.h \
+        treeitem.h \
+        treemodel.h \
+        treeview.h
 
 FORMS += \
         apiconfigdialog.ui \

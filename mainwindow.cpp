@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    m_pApiListTreeView = new ApiListTreeView();
+    m_pApiListTreeView = new ApiTreeView();
 
     setCentralWidget(m_pApiListTreeView);
 }

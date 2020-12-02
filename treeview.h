@@ -1,36 +1,36 @@
-#ifndef APILISTTREEVIEW_H
-#define APILISTTREEVIEW_H
+#ifndef APITREEVIEW_H
+#define APITREEVIEW_H
 
 #include "serverconfigdialog.h"
 #include "apiconfigdialog.h"
-#include "apimodel.h"
-#include "apiitemdelegate.h"
-#include "apiitem.h"
+#include "treemodel.h"
+#include "treeitem.h"
 #include "common.h"
+#include "httputil.h"
 
 #include <QTreeView>
 #include <QMenu>
 #include <QAction>
+#include <QVector>
 #include <QMouseEvent>
-#include <QStandardItemModel>
-#include <QStandardItem>
 
-class ApiListTreeView : public QTreeView
+class ApiTreeView : public QTreeView
 {
     Q_OBJECT
 
 public:
-    ApiListTreeView();
-    ~ApiListTreeView();
+    ApiTreeView();
+    ~ApiTreeView();
+
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
-    void OnItemClicked(const QModelIndex &index);
     void OnAddServer();
     void OnAddApi();
     void OnTestApi();
     void OnTestAll();
+    void OnDoubleClicked(const QModelIndex &index);
 
 private:
     QMenu                   *m_pMenu;       //主菜单
@@ -39,12 +39,9 @@ private:
     QAction                 *m_pTestApi;    //测试当前接口
     QAction                 *m_pTestAll;    //测试所有接口
     ServerConfigDialog      *m_pServerConfigDialog;
-    ApiModel                *m_pModel;
-    QVector<ApiItem*>       m_vecServerItems;
-    QVector<QVector<ApiItem*>> m_vvecApiItems;
+    TreeModel               *m_pModel;
     ApiConfigDialog         *m_pApiConfigDialog;
     QModelIndex             m_selectedIndex;
-    ApiItemDelegate         *m_pItemDelegate;
 };
 
-#endif // APILISTTREEVIEW_H
+#endif // APITREEVIEW_H

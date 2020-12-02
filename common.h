@@ -1,6 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 #include <QMutex>
+#include <QString>
 
 static QMutex g_mutex;
 
@@ -22,5 +23,7 @@ enum PARAM_TYPE {
     PARAM_JSON,
     PARAM_FORMDATA
 };
+
+extern QString APPLICATION_DIR;
 
 #endif // COMMON_H

@@ -27,10 +27,10 @@ void HttpUtil::OnReplyFinished(QNetworkReply *reply) {
     int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     if(reply->error() == QNetworkReply::NoError && statusCode == 200) {
         qDebug() << "请求成功";
-        m_bRequestResult = true;
+        m_iRequestResult = 0;
     } else {
         qDebug() << "请求失败, error:" << reply->error() << " statusCode:" << statusCode;
-        m_bRequestResult = false;
+        m_iRequestResult = 1;
     }
 
     reply->deleteLater();
@@ -40,10 +40,10 @@ void HttpUtil::OnEventLoopFinished() {
     int statusCode = m_pNetworkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     if(m_pNetworkReply->error() == QNetworkReply::NoError && statusCode == 200) {
         qDebug() << "OnEventLoopFinished 请求成功";
-        m_bRequestResult = true;
+        m_iRequestResult = 0;
     } else {
         qDebug() << "OnEventLoopFinished 请求失败, error:" << m_pNetworkReply->error() << " statusCode:" << statusCode;
-        m_bRequestResult = false;
+        m_iRequestResult = 1;
     }
 
     //m_pNetworkReply->deleteLater();
